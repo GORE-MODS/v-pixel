@@ -1,0 +1,50 @@
+/**
+ * @name v-ghost
+ * @author GORE
+ * @version 1.0.0
+ * @description Stabilized pixel font with a refined CRT overlay theme.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+    font-family: 'Press Start 2P', cursive !important;
+    font-size: 8px !important;
+    line-height: 1.6 !important;
+    letter-spacing: -0.5px !important;
+    text-rendering: pixelated !important;
+    -webkit-font-smoothing: none !important;
+}
+
+body::after {
+    content: " ";
+    display: block;
+    position: fixed;
+    top: 0; left: 0; bottom: 0; right: 0;
+    
+    background: 
+        linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.15) 50%),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02), rgba(0, 0, 0, 0.02));
+    
+    z-index: 9999;
+    background-size: 100% 4px, 4px 100%;
+    pointer-events: none;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.02) 0%, rgba(0, 0, 0, 0.2) 100%);
+    z-index: 9998;
+    pointer-events: none;
+}
+
+[class^="inner_"], [class^="contents_"], [class^="name_"] {
+    margin-top: 2px !important;
+    margin-bottom: 2px !important;
+}
+
+::-webkit-scrollbar {
+    width: 6px !important;
+}
